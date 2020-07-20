@@ -1,0 +1,208 @@
+// Bus Tracking System
+CREATE (b1:Bus{BusId:'BUS01',Model:'Volvo Caetano Levante',ModelYear:2018,ServiceStarts: Time('05:00:00'),ServiceEnds: Time('22:00:00')})-[:RUNS{ServiceStartDate: Date('2018-02-11'),ServiceEndDate: Date(NULL)}]->(r1:Route{rName:'BAvMD',rLength:8,rVia:'Moordown'})<-[:HAVE]-(bc1:BusCompany{bcName:'Yellow Buses Limited',bcId:'YBL',bcEmail:'wecanhelp@yellowbuses.co.uk',bcContactNumber:'01202 636 110',bcAddress:'Avenue Rd, Bournemouth BH2 5SL'})-[:OPERATES]->(b1)
+
+CREATE (b2:Bus{BusId:'BUS02',Model:'Volvo B12B Plaxton Panther',ModelYear:2016,ServiceStarts: Time('05:00:00'),ServiceEnds: Time('22:00:00')})-[:RUNS{ServiceStartDate: Date('2016-04-23'),ServiceEndDate: Date('2019-04-22')}]->(r1)<-[:HAVE]-(bc2:BusCompany{bcName:'More Buses Limited',bcId:'MBL',bcEmail:'connect@morebuses.co.uk',bcContactNumber:'01202 338 420',bcAddress:'Poole, BH15 1SN'})-[:OPERATES]->(b2)
+
+CREATE(b3:Bus{BusId:'BUS03',Model:'Volvo B9R Caetano',ModelYear:2014,ServiceStarts: Time('05:30:00'),ServiceEnds: Time('22:30:00')})-[:RUNS{ServiceStartDate: Date('2014-06-02'),ServiceEndDate: Date('2017-06-01')}]->(r1)<-[:HAVE]-(bc3:BusCompany{bcName:'Uni Buses',bcId:'BUB',bcEmail:'support@unibuses.co.uk',bcContactNumber:'01202 338 420',bcAddress:'Fern Barrow, Wallisdown, Poole BH12 5BB'})-[:OPERATES]->(b3)
+
+CREATE(b4:Bus{BusId:'BUS04',Model:'CORGI OM46206 Scania',ModelYear:2018,ServiceStarts: Time('05:30:00'),ServiceEnds: Time('22:30:00')})-[:RUNS{ServiceStartDate: Date('2018-08-25'),ServiceEndDate: Date(NULL)}]->(r1)<-[:HAVE]-(bc4:BusCompany{bcName:'South coast Travels',bcId:'SCT',bcEmail:'sct@southcoasttravel.co.uk',bcContactNumber:'01202 530 200',bcAddress:'Throop Business park, Throop Rd, Bournemouth BH8 0DQ'})-[:OPERATES]->(bc4)
+
+CREATE(b5:Bus{BusId:'BUS05',Model:'Volvo Wright Eclipse Gemini',ModelYear:2017,ServiceStarts: Time('05:15:00'),ServiceEnds: Time('22:15:00')})-[:RUNS{ServiceStartDate: Date('2017-10-01'),ServiceEndDate: Date(NULL)}]->(r2:Route{rName:'BAvBC',rLength:9,rVia:'Boscombe'})<-[:HAVE]-(bc2)-[:OPERATES]->(b5)
+
+CREATE(b6:Bus{BusId:'BUS06',Model:'Volvo Caetano Levante',ModelYear:2015,ServiceStarts: Time('05:15:00'),ServiceEnds: Time('22:15:00')})-[:RUNS{ServiceStartDate: Date('2015-02-11'),ServiceEndDate: Date('2018-02-10')}]->(r2)<-[:HAVE]-(bc1)-[:OPERATES]->(b6)
+
+CREATE(b7:Bus{BusId:'BUS07',Model:'Volvo B12B Plaxton Panther',ModelYear:2016,ServiceStarts: Time('05:45:00'),ServiceEnds: Time('22:45:00')})-[:RUNS{ServiceStartDate: Date('2016-04-23'),ServiceEndDate: Date('2019-04-22')}]->(r2)<-[:HAVE]-(bc4)-[:OPERATES]->(b7)
+
+CREATE(b8:Bus{BusId:'BUS08',Model:'CORGI OM46206 Scania',ModelYear:2015,ServiceStarts: Time('05:30:00'),ServiceEnds: Time('22:30:00')})-[:RUNS{ServiceStartDate: Date('2015-08-25'),ServiceEndDate: Date('2018-08-24')}]->(r2)<-[:HAVE]-(bc3)-[:OPERATES]->(b8)
+
+CREATE(b9:Bus{BusId:'BUS09',Model:'Volvo MCV EvoSeti',ModelYear:2018,ServiceStarts: Time('06:00:00'),ServiceEnds: Time('23:00:00')})-[:RUNS{ServiceStartDate: Date('2018-12-01'),ServiceEndDate: Date(NULL)}]->(r3:Route{rName:'BAvKN',rLength:10,rVia:'Kinson'})<-[:HAVE]-(bc1)-[:OPERATES]->(b9)
+
+CREATE(b10:Bus{BusId:'BUS10',Model:'Volvo B9R Caetano',ModelYear:2017,ServiceStarts: Time('06:00:00'),ServiceEnds: Time('23:00:00')})-[:RUNS{ServiceStartDate: Date('2017-05-14'),ServiceEndDate: Date('2020-05-13')}]->(r3)<-[:HAVE]-(bc1)-[:OPERATES]->(b10)
+
+CREATE(b11:Bus{BusId:'BUS11',Model:'Volvo Wright Eclipse Gemini',ModelYear:2017,ServiceStarts: Time('05:30:00'),ServiceEnds: Time('22:30:00')})-[:RUNS{ServiceStartDate: Date('2017-10-01'),ServiceEndDate: Date(NULL)}]->(r3)<-[:HAVE]-(bc2)-[:OPERATES]->(b11)
+
+CREATE(b12:Bus{BusId:'BUS12',Model:'Volvo Caetano Levante',ModelYear:2015,ServiceStarts: Time('05:15:00'),ServiceEnds: Time('22:15:00')})-[:RUNS{ServiceStartDate: Date('2015-02-11'),ServiceEndDate: Date('2018-02-10')}]->(r3)<-[:HAVE]-(bc3)-[:OPERATES]->(b12)
+
+CREATE(b13:Bus{BusId:'BUS13',Model:'Volvo MCV EvoSeti',ModelYear:2019,ServiceStarts: Time('05:00:00'),ServiceEnds: Time('22:00:00')})-[:RUNS{ServiceStartDate: Date('2019-11-16'),ServiceEndDate: Date(NULL)}]->(r4:Route{rName:'KNvWH',rLength:6,rVia:'West Howe'})<-[:HAVE]-(bc4)-[:OPERATES]->(b13)
+
+CREATE(b14:Bus{BusId:'BUS14',Model:'CORGI OM46206 Scania',ModelYear:2015,ServiceStarts: Time('05:00:00'),ServiceEnds: Time('22:00:00')})-[:RUNS{ServiceStartDate: Date('2015-08-25'),ServiceEndDate: Date('2018-08-24')}]->(r4)<-[:HAVE]-(bc4)-[:OPERATES]->(b14)
+
+CREATE(b15:Bus{BusId:'BUS15',Model:'Optare Metrodecker',ModelYear:2020,ServiceStarts: Time('05:15:00'),ServiceEnds: Time('22:15:00')})-[:RUNS{ServiceStartDate: Date('2020-01-10'),ServiceEndDate: Date(NULL)}]->(r4)<-[:HAVE]-(bc3)-[:OPERATES]->(b15)
+
+CREATE(b16:Bus{BusId:'BUS16',Model:'Volvo Wright Eclipse Gemini',ModelYear:2019,ServiceStarts: Time('05:30:00'),ServiceEnds: Time('22:30:00')})-[:RUNS{ServiceStartDate: Date('2019-09-20'),ServiceEndDate: Date(NULL)}]->(r4)<-[:HAVE]-(bc2)-[:OPERATES]->(b16)
+
+CREATE(b17:Bus{BusId:'BUS17',Model:'Optare Tempo',ModelYear:2020,ServiceStarts: Time('05:10:00'),ServiceEnds: Time('22:10:00')})-[:RUNS{ServiceStartDate: Date('2020-03-01'),ServiceEndDate: Date(NULL)}]->(r5:Route{rName:'KNvEH',rLength:6,rVia:'East Howe'})<-[:HAVE]-(bc1)-[:OPERATES]->(b17)
+
+CREATE(b18:Bus{BusId:'BUS18',Model:'Volvo B12B Plaxton Panther',ModelYear:2016,ServiceStarts: Time('05:10:00'),ServiceEnds: Time('22:10:00')})-[:RUNS{ServiceStartDate: Date('2016-04-23'),ServiceEndDate: Date('2019-04-22')}]->(r5)<-[:HAVE]-(bc4)-[:OPERATES]->(b18)
+
+CREATE(b19:Bus{BusId:'BUS19',Model:'Optare Metrodecker',ModelYear:2020,ServiceStarts: Time('05:20:00'),ServiceEnds: Time('22:20:00')})-[:RUNS{ServiceStartDate: Date('2020-01-10'),ServiceEndDate: Date(NULL)}]->(r5)<-[:HAVE]-(bc3)-[:OPERATES]->(b19)
+
+CREATE(b20:Bus{BusId:'BUS20',Model:'Optare Tempo',ModelYear:2020,ServiceStarts: Time('05:40:00'),ServiceEnds: Time('22:40:00')})-[:RUNS{ServiceStartDate: Date('2020-03-01'),ServiceEndDate: Date(NULL)}]->(r5)<-[:HAVE]-(bc2)-[:OPERATES]->(b20)
+
+CREATE(b21:Bus{BusId:'BUS21',Model:'Volvo Caetano Levante',ModelYear:2018,ServiceStarts: Time('05:00:00'),ServiceEnds: Time('22:00:00')})-[:RUNS{ServiceStartDate: Date('2018-01-28'),ServiceEndDate: Date(NULL)}]->(r6:Route{rName:'NMvIF',rLength:8,rVia:'Iford'})<-[:HAVE]-(bc1)-[:OPERATES]->(b21)
+
+CREATE(b22:Bus{BusId:'BUS22',Model:'Volvo MCV EvoSeti',ModelYear:2018,ServiceStarts: Time('05:15:00'),ServiceEnds: Time('22:15:00')})-[:RUNS{ServiceStartDate: Date('2018-12-01'),ServiceEndDate: Date(NULL)}]->(r6)<-[:HAVE]-(bc3)-[:OPERATES]->(b22)
+
+CREATE(b23:Bus{BusId:'BUS23',Model:'Volvo B9R Caetano',ModelYear:2014,ServiceStarts: Time('05:15:00'),ServiceEnds: Time('22:15:00')})-[:RUNS{ServiceStartDate: Date('2014-06-04'),ServiceEndDate: Date('2019-06-03')}]->(r6)<-[:HAVE]-(bc4)-[:OPERATES]->(b23)
+
+CREATE(b24:Bus{BusId:'BUS24',Model:'Optare Tempo',ModelYear:2020,ServiceStarts: Time('05:30:00'),ServiceEnds: Time('22:30:00')})-[:RUNS{ServiceStartDate: Date('2020-03-01'),ServiceEndDate: Date(NULL)}]->(r6)<-[:HAVE]-(bc2)-[:OPERATES]->(b24)
+
+CREATE(b25:Bus{BusId:'BUS25',Model:'CORGI OM46206 Scania',ModelYear:2015,ServiceStarts: Time('05:10:00'),ServiceEnds: Time('22:10:00')})-[:RUNS{ServiceStartDate: Date('2015-08-25'),ServiceEndDate: Date('2018-08-24')}]->(r7:Route{rName:'NMvSB',rLength:8,rVia:'Southbourne'})<-[:HAVE]-(bc3)-[:OPERATES]->(b25)
+
+CREATE(b26:Bus{BusId:'BUS26',Model:'Optare Metrodecker',ModelYear:2020,ServiceStarts: Time('05:20:00'),ServiceEnds: Time('22:20:00')})-[:RUNS{ServiceStartDate: Date('2020-01-10'),ServiceEndDate: Date(NULL)}]->(r7)<-[:HAVE]-(bc3)-[:OPERATES]->(b26)
+
+CREATE(b27:Bus{BusId:'BUS27',Model:'Volvo Wright Eclipse Gemini',ModelYear:2017,ServiceStarts: Time('05:40:00'),ServiceEnds: Time('22:40:00')})-[:RUNS{ServiceStartDate: Date('2017-10-01'),ServiceEndDate: Date(NULL)}]->(r7)<-[:HAVE]-(bc4)-[:OPERATES]->(b27)
+
+CREATE(b28:Bus{BusId:'BUS28',Model:'Optare Tempo',ModelYear:2020,ServiceStarts: Time('06:00:00'),ServiceEnds: Time('23:00:00')})-[:RUNS{ServiceStartDate: Date('2020-03-01'),ServiceEndDate: Date(NULL)}]->(r7)<-[:HAVE]-(bc1)-[:OPERATES]->(b28)
+
+CREATE(b29:Bus{BusId:'BUS29',Model:'Volvo MCV EvoSeti',ModelYear:2018,ServiceStarts: Time('05:00:00'),ServiceEnds: Time('22:00:00')})-[:RUNS{ServiceStartDate: Date('2018-12-01'),ServiceEndDate: Date(NULL)}]->(r8:Route{rName:'WBvBU',rLength:9,rVia:'BU-Talbot campus'})<-[:HAVE]-(bc2)-[:OPERATES]->(b29)
+
+CREATE(b30:Bus{BusId:'BUS30',Model:'Volvo Caetano Levante',ModelYear:2015,ServiceStarts: Time('05:00:00'),ServiceEnds: Time('22:00:00')})-[:RUNS{ServiceStartDate: Date('2015-02-11'),ServiceEndDate: Date('2018-02-10')}]->(r8)<-[:HAVE]-(bc2)-[:OPERATES]->(b30)
+
+CREATE(b31:Bus{BusId:'BUS31',Model:'Volvo B9R Caetano',ModelYear:2017,ServiceStarts: Time('05:15:00'),ServiceEnds: Time('22:15:00')})-[:RUNS{ServiceStartDate: Date('2017-05-14'),ServiceEndDate: Date('2020-05-13')}]->(r8)<-[:HAVE]-(bc1)-[:OPERATES]->(b31)
+
+CREATE(b32:Bus{BusId:'BUS32',Model:'Volvo MCV EvoSeti',ModelYear:2018,ServiceStarts: Time('05:15:00'),ServiceEnds: Time('22:15:00')})-[:RUNS{ServiceStartDate: Date('2018-12-11'),ServiceEndDate: Date(NULL)}]->(r8)<-[:HAVE]-(bc3)-[:OPERATES]->(b32)
+
+CREATE(b33:Bus{BusId:'BUS33',Model:'Optare Metrodecker',ModelYear:2020,ServiceStarts: Time('05:30:00'),ServiceEnds: Time('22:30:00')})-[:RUNS{ServiceStartDate: Date('2020-03-01'),ServiceEndDate: Date(NULL)}]->(r9:Route{rName:'WBvEH',rLength:9,rVia:'East Howe'})<-[:HAVE]-(bc4)-[:OPERATES]->(b33)
+
+CREATE(b34:Bus{BusId:'BUS34',Model:'CORGI OM46206 Scania',ModelYear:2015,ServiceStarts: Time('05:30:00'),ServiceEnds: Time('22:30:00')})-[:RUNS{ServiceStartDate: Date('2015-08-25'),ServiceEndDate: Date('2018-08-24')}]->(r9)<-[:HAVE]-(bc4)-[:OPERATES]->(b34)
+
+CREATE(b35:Bus{BusId:'BUS35',Model:'Optare Tempo',ModelYear:2020,ServiceStarts: Time('05:10:00'),ServiceEnds: Time('22:10:00')})-[:RUNS{ServiceStartDate: Date('2020-03-01'),ServiceEndDate: Date(NULL)}]->(r9)<-[:HAVE]-(bc1)-[:OPERATES]->(b35)
+
+CREATE(b36:Bus{BusId:'BUS36',Model:'Optare Metrodecker',ModelYear:2020,ServiceStarts: Time('05:25:00'),ServiceEnds: Time('22:25:00')})-[:RUNS{ServiceStartDate: Date('2020-10-10'),ServiceEndDate: Date(NULL)}]->(r9)<-[:HAVE]-(bc2)-[:OPERATES]->(b36)
+
+CREATE(b37:Bus{BusId:'BUS37',Model:'Volvo B12B Plaxton Panther',ModelYear:2019,ServiceStarts: Time('05:00:00'),ServiceEnds: Time('22:00:00')})-[:RUNS{ServiceStartDate: Date('2019-03-14'),ServiceEndDate: Date(NULL)}]->(r10:Route{rName:'WBvWH',rLength:10,rVia:'West Howe'})<-[:HAVE]-(bc3)-[:OPERATES]->(b37)
+
+CREATE(b38:Bus{BusId:'BUS38',Model:'Volvo Wright Eclipse Gemini',ModelYear:2017,ServiceStarts: Time('05:20:00'),ServiceEnds: Time('22:20:00')})-[:RUNS{ServiceStartDate: Date('2017-10-01'),ServiceEndDate: Date(NULL)}]->(r10)<-[:HAVE]-(bc2)-[:OPERATES]->(b38)
+
+CREATE(b39:Bus{BusId:'BUS39',Model:'Volvo MCV EvoSeti',ModelYear:2019,ServiceStarts: Time('05:40:00'),ServiceEnds: Time('22:40:00')})-[:RUNS{ServiceStartDate: Date('2019-11-25'),ServiceEndDate: Date(NULL)}]->(r10)<-[:HAVE]-(bc1)-[:OPERATES]->(b39)
+
+CREATE(b40:Bus{BusId:'BUS40',Model:'Volvo B9R Caetano',ModelYear:2014,ServiceStarts: Time('05:40:00'),ServiceEnds: Time('22:40:00')})-[:RUNS{ServiceStartDate: Date('2014-06-04'),ServiceEndDate: Date('2017-06-03')}]->(r10)<-[:HAVE]-(bc4)-[:OPERATES]->(b40)
+
+
+// Bus Stop Definition:
+
+CREATE(bs1:BusStop{bsName:'Bournemouth Square',BStype:'In-Lane',bsCoordinates:'50.7202° N, 1.8786° W',bsAddress:'The Square, Bournemouth,BH2 6ED'})
+CREATE(bs2:BusStop{bsName:'Bournemouth Bus Station',BStype:'In-Lane',bsCoordinates:'50.7272° N, 1.8641° W',bsAddress:'Boscombe, Bournemouth BH8 8DL'})
+CREATE(bs3:BusStop{bsName:'Winton',BStype:'On-Street',bsCoordinates:'50.7402° N, 1.8885° W',bsAddress:'Winton, Bournemouth BH9 2HJ'})
+CREATE(bs4:BusStop{bsName:'Moordown',BStype:'Median',bsCoordinates:'50.7546° N, 1.8751° W',bsAddress:' Old St Johns Mews, Moordown, Bournemouth BH9 2BH'})
+CREATE(bs5:BusStop{bsName:'Westover Retail park',BStype:'On-Street',bsCoordinates:'50.7600° N, 1.8722° W',bsAddress:'Bournemouth BH9 2UB'})
+CREATE(bs6:BusStop{bsName:'Northbourne',BStype:'On-Street',bsCoordinates:'51.2211° N, 1.3397° E',bsAddress:' Bournemouth BH10 4EP'})
+CREATE(bs7:BusStop{bsName:'Chapel Gate',BStype:'On-Street',bsCoordinates:'51.2697° N, 1.0930° W',bsAddress:'West Parley, Ferndown BH22 8EF'})
+CREATE(bs8:BusStop{bsName:'Bournemouth Airport',BStype:'In-Lane',bsCoordinates:'50.7775° N, 1.8323° W',bsAddress:'Christchurch BH23 6DL'})
+CREATE(bs9:BusStop{bsName:'Boscombe',BStype:'Median',bsCoordinates:'50.7236° N, 1.8485° W',bsAddress:'Ashley Rd, Bournemouth BH1 4LE'})
+CREATE(bs10:BusStop{bsName:'Charminster',BStype:'Median',bsCoordinates:'50.7315° N, 2.4531° W',bsAddress:'Bournemouth BH8 8UX'})
+CREATE(bs11:BusStop{bsName:'BU talbot campus',BStype:'In-Lane',bsCoordinates:'50.7424° N, 1.8961° W',bsAddress:'Poole BH12 5BB'})
+CREATE(bs12:BusStop{bsName:'Wallisdown',BStype:'Median',bsCoordinates:'50.7415° N, 1.8976° W',bsAddress:'Poole BH12 5HG'})
+CREATE(bs13:BusStop{bsName:'West Howe',BStype:'On-Street',bsCoordinates:'50.7577° N, 1.9106° W',bsAddress:'Bournemouth BH11 9HG'})
+CREATE(bs14:BusStop{bsName:'Kinson',BStype:'Median',bsCoordinates:'50.7697° N, 1.9014° W',bsAddress:'Bournemouth BH10 7DW'})
+CREATE(bs15:BusStop{bsName:'Ensbury Park',BStype:'On-Street',bsCoordinates:'50.7505° N, 1.8882° W',bsAddress:'Bournemouth BH10 4EA'})
+CREATE(bs16:BusStop{bsName:'East Howe',BStype:'On-Street',bsCoordinates:'50.7569° N, 1.9014° W',bsAddress:'Bournemouth BH10 5JL'})
+CREATE(bs17:BusStop{bsName:'Pokesdown',BStype:'On-Street',bsCoordinates:'50.7289° N, 1.8250° W',bsAddress:'Bournemouth BH5 2JZ'})
+CREATE(bs18:BusStop{bsName:'Iford',BStype:'Median',bsCoordinates:'51.5566° N, 0.0763° E',bsAddress:'Bournemouth BH7 6EE'})
+CREATE(bs19:BusStop{bsName:'Christchruch',BStype:'In-Lane',bsCoordinates:'43.5321° S, 172.6362° E',bsAddress:'Christchurch BH23 1PL'})
+CREATE(bs20:BusStop{bsName:'Purewell',BStype:'Median',bsCoordinates:'50.7373° N, 1.7692° W',bsAddress:'Bournemouth BH2 5RG'})
+CREATE(bs21:BusStop{bsName:'High cliffe',BStype:'On-Street',bsCoordinates:'50.7409° N, 1.7024° W',bsAddress:'Christchurch BH23 5EL'})
+CREATE(bs22:BusStop{bsName:'New Milton',BStype:'Median',bsCoordinates:'50.7531° N, 1.6551° W',bsAddress:'New Milton BH25 6EB'})
+CREATE(bs23:BusStop{bsName:'Fishersmans Walk',BStype:'On-Street',bsCoordinates:'50.7268° N, 1.8179° W',bsAddress:'Bournemouth BH6 3RE'})
+CREATE(bs24:BusStop{bsName:'Southbourne',BStype:'On-Street',bsCoordinates:'50.7223° N, 1.7956° W',bsAddress:' Bournemouth BH6 3DJ'})
+CREATE(bs25:BusStop{bsName:'Mountbatten',BStype:'On-Street',bsCoordinates:'50.3575° N, 4.1252° W',bsAddress:'Poole BH12 5BA'})
+CREATE(bs26:BusStop{bsName:'Bearwood',BStype:'Median',bsCoordinates:'52.4768° N, 1.9702° W',bsAddress:'Bournemouth BH11 9UA'})
+CREATE(bs27:BusStop{bsName:'Marley',BStype:'Median',bsCoordinates:'51.2092° N, 1.1295° E',bsAddress:'New Milton BH25 5NP'})
+CREATE(bs28:BusStop{bsName:'Wimbourne',BStype:'Median',bsCoordinates:'50.8005° N, 1.9830° W',bsAddress:'Wimborne BH21 1JF'})
+
+
+//Bus Stop- Route Relationship:
+
+CREATE(r1)-[:HAS{StopTrackId:1}]->(bs1)
+CREATE(r1)-[:HAS{StopTrackId:2}]->(bs2)
+CREATE(r1)-[:HAS{StopTrackId:3}]->(bs3)
+CREATE(r1)-[:HAS{StopTrackId:4}]->(bs4)
+CREATE(r1)-[:HAS{StopTrackId:5}]->(bs5)
+CREATE(r1)-[:HAS{StopTrackId:6}]->(bs6)
+CREATE(r1)-[:HAS{StopTrackId:7}]->(bs7)
+CREATE(r1)-[:HAS{StopTrackId:8}]->(bs8)
+
+CREATE(r2)-[:HAS{StopTrackId:1}]->(bs1)
+CREATE(r2)-[:HAS{StopTrackId:2}]->(bs9)
+CREATE(r2)-[:HAS{StopTrackId:3}]->(bs10)
+CREATE(r2)-[:HAS{StopTrackId:4}]->(bs3)
+CREATE(r2)-[:HAS{StopTrackId:5}]->(bs4)
+CREATE(r2)-[:HAS{StopTrackId:6}]->(bs5)
+CREATE(r2)-[:HAS{StopTrackId:7}]->(bs6)
+CREATE(r2)-[:HAS{StopTrackId:8}]->(bs7)
+CREATE(r2)-[:HAS{StopTrackId:9}]->(bs8)
+
+CREATE(r3)-[:HAS{StopTrackId:1}]->(bs1)
+CREATE(r3)-[:HAS{StopTrackId:2}]->(bs2)
+CREATE(r3)-[:HAS{StopTrackId:3}]->(bs3)
+CREATE(r3)-[:HAS{StopTrackId:4}]->(bs11)
+CREATE(r3)-[:HAS{StopTrackId:5}]->(bs12)
+CREATE(r3)-[:HAS{StopTrackId:6}]->(bs13)
+CREATE(r3)-[:HAS{StopTrackId:7}]->(bs14)
+CREATE(r3)-[:HAS{StopTrackId:8}]->(bs6)
+CREATE(r3)-[:HAS{StopTrackId:9}]->(bs7)
+CREATE(r3)-[:HAS{StopTrackId:10}]->(bs8)
+
+CREATE(r4)-[:HAS{StopTrackId:1}]->(bs1)
+CREATE(r4)-[:HAS{StopTrackId:2}]->(bs2)
+CREATE(r4)-[:HAS{StopTrackId:3}]->(bs3)
+CREATE(r4)-[:HAS{StopTrackId:4}]->(bs15)
+CREATE(r4)-[:HAS{StopTrackId:5}]->(bs13)
+CREATE(r4)-[:HAS{StopTrackId:6}]->(bs14)
+
+CREATE(r5)-[:HAS{StopTrackId:1}]->(bs1)
+CREATE(r5)-[:HAS{StopTrackId:2}]->(bs2)
+CREATE(r5)-[:HAS{StopTrackId:3}]->(bs3)
+CREATE(r5)-[:HAS{StopTrackId:4}]->(bs15)
+CREATE(r5)-[:HAS{StopTrackId:5}]->(bs16)
+CREATE(r5)-[:HAS{StopTrackId:6}]->(bs14)
+
+CREATE(r6)-[:HAS{StopTrackId:1}]->(bs1)
+CREATE(r6)-[:HAS{StopTrackId:2}]->(bs9)
+CREATE(r6)-[:HAS{StopTrackId:3}]->(bs17)
+CREATE(r6)-[:HAS{StopTrackId:4}]->(bs18)
+CREATE(r6)-[:HAS{StopTrackId:5}]->(bs19)
+CREATE(r6)-[:HAS{StopTrackId:6}]->(bs20)
+CREATE(r6)-[:HAS{StopTrackId:7}]->(bs21)
+CREATE(r6)-[:HAS{StopTrackId:8}]->(bs22)
+
+CREATE(r7)-[:HAS{StopTrackId:1}]->(bs1)
+CREATE(r7)-[:HAS{StopTrackId:2}]->(bs9)
+CREATE(r7)-[:HAS{StopTrackId:3}]->(bs23)
+CREATE(r7)-[:HAS{StopTrackId:4}]->(bs24)
+CREATE(r7)-[:HAS{StopTrackId:5}]->(bs19)
+CREATE(r7)-[:HAS{StopTrackId:6}]->(bs20)
+CREATE(r7)-[:HAS{StopTrackId:7}]->(bs21)
+CREATE(r7)-[:HAS{StopTrackId:8}]->(bs22)
+
+CREATE(r8)-[:HAS{StopTrackId:1}]->(bs1)
+CREATE(r8)-[:HAS{StopTrackId:2}]->(bs2)
+CREATE(r8)-[:HAS{StopTrackId:3}]->(bs3)
+CREATE(r8)-[:HAS{StopTrackId:4}]->(bs11)
+CREATE(r8)-[:HAS{StopTrackId:5}]->(bs12)
+CREATE(r8)-[:HAS{StopTrackId:6}]->(bs25)
+CREATE(r8)-[:HAS{StopTrackId:7}]->(bs26)
+CREATE(r8)-[:HAS{StopTrackId:8}]->(bs27)
+CREATE(r8)-[:HAS{StopTrackId:9}]->(bs28)
+
+CREATE(r9)-[:HAS{StopTrackId:1}]->(bs1)
+CREATE(r9)-[:HAS{StopTrackId:2}]->(bs2)
+CREATE(r9)-[:HAS{StopTrackId:3}]->(bs3)
+CREATE(r9)-[:HAS{StopTrackId:4}]->(bs15)
+CREATE(r9)-[:HAS{StopTrackId:5}]->(bs16)
+CREATE(r9)-[:HAS{StopTrackId:6}]->(bs14)
+CREATE(r9)-[:HAS{StopTrackId:7}]->(bs26)
+CREATE(r9)-[:HAS{StopTrackId:8}]->(bs27)
+CREATE(r9)-[:HAS{StopTrackId:9}]->(bs28)
+
+CREATE(r10)-[:HAS{StopTrackId:1}]->(bs1)
+CREATE(r10)-[:HAS{StopTrackId:2}]->(bs2)
+CREATE(r10)-[:HAS{StopTrackId:3}]->(bs3)
+CREATE(r10)-[:HAS{StopTrackId:4}]->(bs11)
+CREATE(r10)-[:HAS{StopTrackId:5}]->(bs12)
+CREATE(r10)-[:HAS{StopTrackId:6}]->(bs13)
+CREATE(r10)-[:HAS{StopTrackId:7}]->(bs14)
+CREATE(r10)-[:HAS{StopTrackId:8}]->(bs26)
+CREATE(r10)-[:HAS{StopTrackId:9}]->(bs27)
+CREATE(r10)-[:HAS{StopTrackId:10}]->(bs28)
